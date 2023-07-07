@@ -1,0 +1,6 @@
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\Nick-Blazor_StoredProcedures\bin\Debug\Nick-Blazor_StoredProcedures.dacpac
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\Nick-Blazor_StoredProcedures\bin\Debug\Nick_Blazor_StoredProcedures.dll
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\Nick-Blazor_StoredProcedures\bin\Debug\Nick_Blazor_StoredProcedures.pdb
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\Nick-Blazor_StoredProcedures\obj\Debug\Nick-Blazor_StoredProcedures.sqlproj.AssemblyReference.cache
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\Nick-Blazor_StoredProcedures\obj\Debug\Nick_Blazor_StoredProcedures.dll
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\Nick-Blazor_StoredProcedures\obj\Debug\Nick_Blazor_StoredProcedures.pdb

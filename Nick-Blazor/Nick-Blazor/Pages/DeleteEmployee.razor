@@ -1,0 +1,99 @@
+﻿@page "/DeleteEmployee/{Idnumber}"
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using DataAccessLibrary.Data
+@using System
+@using Models
+@using Data
+@inject Blazored.SessionStorage.ISessionStorageService session
+@using Nick_Blazor.Data
+@inject NavigationManager NavigationManager
+
+@inject IClassEmployee _db
+
+<h3>Delete Employee</h3>
+
+@if (empModel is null)
+{
+	<p><em>Loading...!</em></p>
+}
+else
+{
+	<form>
+		<div class="row">
+			<div class="col-md-8">
+
+				<div class="for-group">
+					<label for="Idnumber" class="control-label">
+						Employee Number
+					</label>
+					<input form="Idnumber" class="form-control" @bind="@empModel.Idnumber" readonly/>
+				</div>
+				<div class="for-group">
+					<label for="FirstName" class="control-label">
+						First Name
+					</label>
+					<input form="FirstName" class="form-control" @bind="@empModel.FirstName" />
+				</div>
+				<div class="for-group">
+					<label for="LastName" class="control-label">
+						Last Name
+					</label>
+					<input form="LastName" class="form-control" @bind="@empModel.LastName" />
+				</div>
+
+				<div class="for-group">
+					<label for="EmailAddress" class="control-label">
+						Email Address
+					</label>
+					<input form="EmailAddress" class="form-control" @bind="@empModel.EmailAddress" />
+				</div>
+				<div class="for-group">
+					<label for="Contact" class="control-label">
+						Phone Number
+					</label>
+					<input form="Contact" class="form-control" @bind="@empModel.Contact" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<input type="button" class="btn btn-outline-danger" @onclick="@DeleteEmployeeDetails" value="Delete" />
+					<input type="button" class="btn btn-outline-primary" @onclick="@Cancel" value="Cancel" />
+				</div>
+			</div>
+		</div>
+
+	</form>
+}
+
+@code {
+
+	EmployeeModel empModel = new EmployeeModel();
+
+	[Parameter]
+	public string Idnumber { get; set; }
+
+	//DisplayEmployeeModel newEmp = new DisplayEmployeeModel();
+
+	protected override async Task OnInitializedAsync()
+	{
+		int id = Convert.ToInt32(Idnumber);
+		empModel = await Task.Run(() => _db.GetEmployee(Convert.ToInt32(Idnumber)));
+		empModel.Idnumber = id;
+	}
+
+	protected async void DeleteEmployeeDetails()
+	{
+		await _db.DeleteEmployee(empModel);
+		NavigationManager.NavigateTo("EmployeeList");
+	}
+
+	protected async void Cancel()
+	{
+		NavigationManager.NavigateTo("EmployeeList");
+	}
+
+}

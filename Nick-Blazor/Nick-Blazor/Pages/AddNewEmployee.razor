@@ -1,0 +1,74 @@
+﻿@page "/AddNewEmployee"
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using DataAccessLibrary.Data
+@using Models
+@using Data
+@using Nick_Blazor.Data
+@inject NavigationManager NavigationManager
+
+@inject IClassEmployee _db
+
+<h3>Add New Employee</h3>
+
+<form>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="for-group">
+				<label for="FirstName" class="control-label">
+					First Name
+				</label>
+				<input form=" FirstName" class="form-control" @bind="@empModel.FirstName" />
+			</div>
+			<div class="for-group">
+				<label for="LastName" class="control-label">
+					Last Name
+				</label>
+				<input form=" LastName" class="form-control" @bind="@empModel.LastName" />
+			</div>
+			<div class="for-group">
+				<label for="EmailAddress" class="control-label">
+					Email Address
+				</label>
+				<input form="EmailAddress" class="form-control" @bind="@empModel.EmailAddress" />
+			</div>
+			<div class="for-group">
+				<label for="PhoneNumber" class="control-label">
+					Phone Number
+				</label>
+				<input form="PhoneNumber" class="form-control" @bind="@empModel.Contact" />
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<input type="button" class="btn btn-primary" @onclick="@CreateNewEmployee" value="Save" />
+				<input type="button" class="btn btn-danger" @onclick="@Cancel" value="Cancel" />
+			</div>
+		</div>
+	</div>
+
+</form>
+
+@code {
+
+	EmployeeModel empModel = new EmployeeModel();
+	[Parameter]
+	public string Id { get; set; }
+
+	protected async void CreateNewEmployee()
+	{
+		await _db.InsertEmployee(empModel);
+
+		NavigationManager.NavigateTo("EmployeeList");
+	}
+
+	protected async void Cancel()
+	{
+		NavigationManager.NavigateTo("EmployeeList");
+	}
+
+}

@@ -1,0 +1,74 @@
+﻿@page "/EmployeeList"
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using DataAccessLibrary.Data
+@using Models
+@using Data
+
+@inject IClassEmployee _db
+
+<h3>EmployeeList</h3>
+<br/>
+
+@if (EmployObj is null)
+{
+	<p><em>Loading...!</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Employee ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+				<th>Contact</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in EmployObj)	
+			{	<tr>
+					<td>@item.Idnumber</td>
+					<td>@item.FirstName</td>
+					<td>@item.LastName</td>
+					<td>@item.EmailAddress</td>
+					<td>@item.Contact</td>
+					<td>
+						<a class="nav-link btn btn-outline-primary" href="UpdateEmployee/@item.Idnumber">
+							<span class="oi oi-pencil" aria-hidden="true">
+								Edit
+							</span>
+						</a>
+					</td>
+					<td>
+						<a class="nav-link btn btn-outline-danger" href="DeleteEmployee/@item.Idnumber">
+							<span class="oi oi-trash" aria-hidden="true">
+								Delete
+							</span>
+						</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+<NavLink class="nav-link" href="AddNewEmployee">
+	<span class="oi oi-plus" aria-hidden="true">Add New Employee</span>
+</NavLink>
+@code {
+
+	IEnumerable<EmployeeModel> EmployObj;
+
+	[Parameter]
+	public string Idnumber { get; set; }
+	//DisplayEmployeeModel newEmp = new DisplayEmployeeModel();
+
+	protected override async Task OnInitializedAsync()
+	{
+		EmployObj = await Task.Run(() => _db.GetEmployees());
+	}
+
+}

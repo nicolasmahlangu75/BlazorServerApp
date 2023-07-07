@@ -1,0 +1,12 @@
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\bin\Debug\net6.0\DataAccessLibrary.deps.json
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\bin\Debug\net6.0\DataAccessLibrary.dll
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\bin\Debug\net6.0\DataAccessLibrary.pdb
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.csproj.AssemblyReference.cache
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.AssemblyInfoInputs.cache
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.AssemblyInfo.cs
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.dll
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\refint\DataAccessLibrary.dll
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.pdb
+C:\Users\Apex User\source\repos\Recent Projects-Blazor\Nick-Blazor\DataAccessLibrary\obj\Debug\net6.0\ref\DataAccessLibrary.dll
